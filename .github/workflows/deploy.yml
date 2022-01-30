@@ -6,14 +6,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
         with:
-          node-version: '14'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
+          run_install: true
+      - name: Build project 👨🏻‍💻
+        run: pnpm run build
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
