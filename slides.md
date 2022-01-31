@@ -1353,6 +1353,69 @@ func main() {
 
 ---
 
+<h1 class="abs-bl p-20">
+Error Handling
+</h1>
+
+---
+
+## Errors & Panics
+
+**Error** indicates that something bad happened, but it might be possible to continue running the program.
+
+```go
+func openScanner(filename string) (*bufio.Scanner, error) {
+    f, err := os.Open(filename)
+    if err != nil {
+        return nil, err
+    }
+
+    return bufio.NewScanner(f)
+}
+```
+
+**Panic** happens at run time, something happened that was fatal to your program and program stops execution.
+
+```go
+func main() {
+    filename := os.Args[0]
+    f, err := os.Open(filename)
+    if err != nil {
+        panic(err)
+    }
+    defer f.Close()
+}
+```
+
+---
+
+## Recovering
+
+[<carbon-link class="text-xl" />](https://go.dev/blog/defer-panic-and-recover) Panic is called during a run time error and fatally kill the program
+
+When the function F calls panic, execution of F stops, any deferred functions in F are executed normally, and then F returns to its caller.
+
+Recover is a built-in function that regains control of a panicking goroutine.
+
+Recover tells Go what to do when that happens. Returns what was passed to panic.
+
+Recover must be paired with defer, which will fire even after a panic
+
+```go
+func f() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered in f", r)
+        }
+    }()
+    fmt.Println("Calling g.")
+    g(0)
+    fmt.Println("Returned normally from g.")
+}
+```
+
+---
+
 # In conclusion
 
 - Go is simple, consistent, readable, and fun.
