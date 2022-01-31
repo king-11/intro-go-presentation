@@ -243,6 +243,12 @@ Huge win in readability and ease of use.
 
 ---
 
+<h1 class="abs-bl p-20">
+Types
+</h1>
+
+---
+
 ### Types
 
 <br/>
@@ -261,12 +267,12 @@ Huge win in readability and ease of use.
 <br/>
 
 #### New:
-- Slices instead of array pointers + separate length: []int
-- Maps because everybody needs them: map[string]int
-- Interfaces for polymorphism: interface{}
-- Channels for communication between goroutines: chan int
+- Slices instead of array pointers + separate length: `[]int`
+- Maps because everybody needs them: `map[string]int`
+- Interfaces for polymorphism: `interface{}`
+- Channels for communication between goroutines: `chan int`
 
-----
+---
 
 ### Variables
 
@@ -307,6 +313,115 @@ return &i
 
 ---
 
+# Array and Slice
+
+<div>An array declaration needs to have a fixed size</div>
+
+```go {1|2|3}
+var scoresDeclare [5]int64
+scoresInitialize := [5]int{1, 2, 3, 11, 101}
+otherScoresInitialize := [...]int{1, 2, 3, 11, 101}
+```
+
+A slice need not have a fixed size
+
+```go {1|2|3}
+var declareFruits []strings
+fruits := []strings{"apple", "banana", "guava"}
+emptyFruits := make([]strings, 3)
+```
+
+>make "Initializes and allocates space in memory for a slice, map, or channel.”
+
+Slice can be extended/appended to have more elements as well
+
+```go
+fruits = append(fruits, "mango")
+```
+
+---
+
+# Maps
+
+A simple hash map
+```go {1|2}
+var users map[int]string
+makeUsers := make(map[int]string)
+```
+
+acessing map returns two values first the value and other whether key is present of not
+```go
+val, ok := users[11]
+if !ok {
+    users[11] = "king-11"
+}
+```
+
+go has no set container but map can serve as set as well
+<div v-click="2">
+
+```go
+set := map[int]bool
+_, ok := set[11]
+```
+
+</div>
+
+---
+
+# Pointers
+
+A pointer in Go is a variable that holds the memory location of that variable instead of a copy of its value.
+
+Pointer type definitions are indicated with a `*` next to the `type name`
+
+```go
+var lakshya = "lakshya"
+var namePointer *string = &lakshya
+```
+
+Pointer variable values are accessed with a `*` next to the `variable name`
+
+```go
+var name = *namePointer
+```
+
+To read through a variable to see the pointer address use a `&` next to the pointer variable name
+
+```go
+var nameAddress = &namePointer
+```
+
+---
+
+# Structs
+
+A method to declare related data together
+
+```go
+type User struct {
+	ID        int
+	firstName string
+	lastName  string
+	email     string
+}
+```
+
+We can directly declare a struct in memory with local scope
+
+```go
+user := User{11, "Lakshya", "Singh", "lakshay.singh1108@gmail.com"}
+```
+
+we might want to save it in memory and get a pointer back
+
+```go
+pointerToUser := &User{11, "Lakshya", "Singh", "lakshay.singh1108@gmail.com"}
+user := *pointerToUser
+```
+
+---
+
 # Functions
 
 <div>Functions may have multiple return values:</div>
@@ -326,10 +441,31 @@ func adder(delta int) func(x int) int {
 }
 ```
 
+You can store functions as variables and also return then from other functions
+
+
 ```go
 var inc = adder(1)
 fmt.Println(inc(0))
 fmt.Println(adder(-1)(10))
+```
+
+---
+
+# Variadic Function
+
+```go
+func doThings(args ...int) int {
+    total := 0
+    for _, num := range args {
+        total += num
+    }
+    return total
+}
+
+func main() {
+    fmt.Println(doThings(1, 11, 101))
+}
 ```
 
 ---
@@ -1152,6 +1288,7 @@ func main() {
     fmt.Println(<-leftmost, time.Since(start))
 }
 ```
+
 
 ---
 
