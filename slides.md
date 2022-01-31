@@ -1,12 +1,7 @@
 ---
-# try also 'default' to start simple
-theme: 'default'
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
+theme: default
 background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-left'
-# https://sli.dev/custom/highlighters.html
+class: text-left
 highlighter: shiki
 download: true
 info: |
@@ -17,7 +12,7 @@ title: Intro to Go
 
 # Intro to Go
 
-Syntax, Concurreny and Comparison of Golang
+Syntax, Concurreny and Comparison of Golang <carbon-logo-google class="text-md animate-spin" />
 
 ---
 layout: image-left
@@ -29,10 +24,10 @@ image: /lakshay.jpeg
 
 - Open Source Contributor
 - Software Developer
-- Polyglot Gopher
-- 3rd Year CSE
+- Polyglot Gopher, Rustacean, Pythonic, Typescripter
+- 3rd Year CSE IIT BHU
 
-Hello to you all <mdi-hand-wave class="animate-bounce"/>
+## Hey everyone <mdi-hand-wave class="animate-bounce"/>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://github.com/king-11" target="_blank" alt="GitHub king-11 Lakshya Singh"
@@ -59,7 +54,7 @@ Hello to you all <mdi-hand-wave class="animate-bounce"/>
 
 ---
 
-# Organization of this workshop
+# Organization of this workshop <carbon-border-full />
 
 - Part1: Introduction to Go
 - Part2: Basic Syntax
@@ -70,11 +65,13 @@ Hello to you all <mdi-hand-wave class="animate-bounce"/>
 - Part7: Error Handling
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Motivation
-</h1>
+# Motivation
 
+---
+layout: cover
 ---
 
 # Have
@@ -85,6 +82,8 @@ Motivation
 - Outdated tools.
 
 ---
+layout: cover
+---
 
 # Want
 
@@ -93,6 +92,8 @@ Motivation
 - Good concurrency support.
 - Tools that can operate at Google-scale.
 
+---
+layout: cover
 ---
 
 # Meet Go
@@ -108,6 +109,7 @@ Motivation
 
 ---
 
+
 # Hello World
 
 ```go {all|1|3|5-7|all}
@@ -121,11 +123,13 @@ func main() {
 ```
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Syntax
-</h1>
+# Syntax
 
+---
+layout: cover
 ---
 
 # Syntax
@@ -178,10 +182,10 @@ default:
 ```
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Reading Go code
-</h1>
+# Structure Go code
 
 ---
 
@@ -236,9 +240,7 @@ func itoa(x, base int) string
 
 <div>In Go, constants are mathematically precise.</div>
 
-<div>There is no need for qualifiers (-42LL, 7UL, etc.)</div>
-
-<br/>
+There is no need for qualifiers (-42LL, 7UL, etc.)
 
 ```go
 const (
@@ -260,23 +262,23 @@ Only when used, constants are truncated to size:
 Huge win in readability and ease of use.
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Types
-</h1>
+# Types
 
 ---
 
-### Types
+## Types
 
 <br/>
 
-#### Familiar:
+### Familiar:
 - Basic types, arrays, structs, pointers, functions.
 
 <br/>
 
-#### But:
+### But:
 - string is a basic type.
 - No automatic conversion of basic types in expressions.
 - No pointer arithmetic; pointers and arrays are different.
@@ -284,7 +286,7 @@ Types
 
 <br/>
 
-#### New:
+### New:
 - Slices instead of array pointers + separate length: `[]int`
 - Maps because everybody needs them: `map[string]int`
 - Interfaces for polymorphism: `interface{}`
@@ -292,9 +294,8 @@ Types
 
 ---
 
-### Variables
+# Variables
 
-<br/>
 
 <div>Familiar:</div>
 
@@ -400,6 +401,8 @@ var namePointer *string = &lakshya
 
 Pointer variable values are accessed with a `*` next to the `variable name`
 
+<v-clicks>
+
 ```go
 var name = *namePointer
 ```
@@ -409,6 +412,8 @@ To read through a variable to see the pointer address use a `&` next to the poin
 ```go
 var nameAddress = &namePointer
 ```
+
+</v-clicks>
 
 ---
 
@@ -621,10 +626,10 @@ for _, x := range primes {
 ```
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Dependencies
-</h1>
+# Dependencies
 
 ---
 
@@ -637,17 +642,13 @@ import "net/rpc"
 ```
 
 Here, the importing package depends on the Go package "rpc".
-<br/>
 
 The import path ("net/rpc") uniquely identifies a package; multiple packages may have the same name, but
 they all reside at different locations (directories).
-<br/>
 
 By convention, the package name matches the last element of the import path (here: "rpc").
-<br/>
 
 Exported functionality of the rpc package is available via the package qualifier (rpc):
-<br/>
 
 ```go
 rpc.Call()
@@ -744,10 +745,10 @@ At Google scale: dependencies explode, are exponential, become almost non-comput
 A large Google C++ build can read the same header file tens of thousands of times!
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Tools
-</h1>
+# Tools
 
 ---
 
@@ -826,17 +827,20 @@ vet         run go tool vet on packages
 [golang.org/cmd/go/](golang.org/cmd/go/)
 
 ---
-
-<h1 class="abs-bl p-20">
-AMA
-</h1>
-
+layout: section
 ---
 
-<h1 class="abs-bl p-20">
-Object-oriented programming
-</h1>
+# AMA / Drinks Break
 
+---
+layout: section
+---
+
+# Object-oriented programming
+
+
+---
+layout: quote
 ---
 
 # What is object-oriented programming?
@@ -1054,11 +1058,14 @@ No explicit type hierarchies.
 "Plug'n play" in a type-safe way.
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Concurrency
-</h1>
+# Concurrency
 
+
+---
+layout: cover
 ---
 
 # What is concurrency?
@@ -1070,6 +1077,8 @@ Concurrency
 
 <p>It is not parallelism.</p>
 
+---
+layout: cover
 ---
 
 # Concurrency is not parallelism
@@ -1102,10 +1111,11 @@ Concurrency
 - There is a long history behind Go's concurrency features, going back to Hoare's CSP in 1978 and even Dijkstra's guarded commands (1975).
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Basic Examples
-</h1>
+# Basic Examples
+
 
 ---
 
@@ -1136,7 +1146,7 @@ func f(msg string, delay time.Duration) {
 
 - The go statement runs the function as usual, but doesn't make the caller wait.
 
-- It launches a goroutine.</>
+- It launches a goroutine.
 
 <p>The functionality is analogous to the & on the end of a shell command.</p>
 
@@ -1147,6 +1157,7 @@ func main() {
     go f("nine", 900*time.Millisecond)
 }
 ```
+
 
 ---
 
@@ -1167,8 +1178,16 @@ func main() {
 ```
 
 ---
+layout: section
+---
 
 # Goroutines
+
+---
+layout: cover
+---
+
+# What are they?
 
 <br/>
 <p>What is a goroutine? It's an independently executing function, launched by a go statement.</p>
@@ -1192,19 +1211,21 @@ func main() {
 <br/>
 A channel in Go provides a connection between two goroutines, allowing them to communicate.
 
+Declaring and initializing.
 ```go
-// Declaring and initializing.
 var c chan int
 c = make(chan int)
 // or
 c := make(chan int)
 ```
+
+Sending on a channel.
 ```go
-// Sending on a channel.
 c <- 1
 ```
+
+Receiving from a channel.
 ```go
-// Receiving from a channel.
 // The "arrow" indicates the direction of data flow.
 value = <-c
 ```
@@ -1227,6 +1248,8 @@ func main() {
 }
 ```
 
+Declartion of `f`
+
 ```go
 func f(msg string, delay time.Duration, c chan string) {
     for i := 0; ; i++ {
@@ -1246,9 +1269,16 @@ func f(msg string, delay time.Duration, c chan string) {
 
 <p>A sender and receiver must both be ready to play their part in the communication. Otherwise we wait until they are.</p>
 
-<p>Thus channels both communicate and synchronize.</p>
+Thus channels both communicate and synchronize.
 
-<p>Channels can be unbuffered or buffered.</p>
+Channels[^1] can be unbuffered or buffered.
+
+```go
+buffered := make(chan int, 5)
+unbuffered := make(chan int)
+```
+
+[^1]: [Buffered Channels](https://go.dev/tour/concurrency/3)
 
 ---
 
@@ -1367,10 +1397,10 @@ func main() {
 >Don't communicate by sharing memory, share memory by communicating.
 
 ---
+layout: section
+---
 
-<h1 class="abs-bl p-20">
-Error Handling
-</h1>
+# Error Handling
 
 ---
 
@@ -1406,15 +1436,11 @@ func main() {
 
 ## Recovering
 
-[<carbon-link class="text-xl" />](https://go.dev/blog/defer-panic-and-recover) Panic is called during a run time error and fatally kill the program
+Panic is called during a run time error and fatally kill the program
 
 When the function F calls panic, execution of F stops, any deferred functions in F are executed normally, and then F returns to its caller.
 
-Recover is a built-in function that regains control of a panicking goroutine.
-
-Recover tells Go what to do when that happens. Returns what was passed to panic.
-
-Recover must be paired with defer, which will fire even after a panic
+Recover[^1] is a built-in function that regains control of a panicking goroutine. It tells Go what to do when that happens. Returns what was passed to panic. Recover must be paired with defer, which will fire even after a panic
 
 ```go
 func f() {
@@ -1429,6 +1455,10 @@ func f() {
 }
 ```
 
+[^1]: [Defer-Panic-Recover](https://go.dev/blog/defer-panic-and-recover)
+
+---
+layout: cover
 ---
 
 # In conclusion
@@ -1447,10 +1477,12 @@ func f() {
 
 
 ---
+layout: cover
+---
 
 # What to do next?
 
-- Learn Go on your browser with [tour.golang.org](https://go.dev/tour/welcome/1)
+- Complete the tour of Go [tour.golang.org](https://go.dev/tour/welcome/1)
 
 - Find more about Go on [golang.org](https://go.dev/)
 
@@ -1465,9 +1497,27 @@ func f() {
 - Build something using awesome tools [https://github.com/avelino/awesome-go](https://github.com/avelino/awesome-go)
 
 ---
+layout: cover
+---
+
+# Uncover Truth About
+
+- Ranging and Closing Channels
+
+- `New` Keyword
+
+- Blocking Calls
+
+- Importand Packages like `net/http`, `bufio`, `os`, `fmt`, `io`, etc
+
+- Testing in Go
+
+- Modules
+
+---
+layout: cover
+---
 
 <section class="w-full h-full flex flex-col justify-center">
   <h1>Thank You <carbon-location-person-filled class="animate-ping"/> </h1>
 </section>
-
----
