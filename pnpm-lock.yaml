@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/dashicons': ^1.0.1
+  '@iconify-json/mdi': ^1.0.15
   '@slidev/cli': ^0.28.2
   '@slidev/theme-default': '*'
   '@slidev/theme-seriph': '*'
@@ -12,6 +14,8 @@ dependencies:
   '@slidev/theme-seriph': 0.21.1
 
 devDependencies:
+  '@iconify-json/dashicons': 1.0.1
+  '@iconify-json/mdi': 1.0.15
   playwright-chromium: 1.18.1
 
 packages:
@@ -57,6 +61,18 @@ packages:
       '@iconify/types': 1.0.12
     dev: false
 
+  /@iconify-json/dashicons/1.0.1:
+    resolution: {integrity: sha512-KplOLauDxGc5ynV7NaaonjN6zMLXqiD02uzZFXUSUxZAjm6AL1w5suJfezgecL6rVMrRpkv/dLN7dFabw7wgXQ==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/mdi/1.0.15:
+    resolution: {integrity: sha512-koiuzFiuFme2uvXl9ZH1uuhPzESw34Fr1K5RLdbtTY9CSOMpe8rVcQCUB3n4lQrHplXlm6DyyFIgCIUCFP+ciA==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify-json/ph/1.0.4:
     resolution: {integrity: sha512-hcxC2k25/Lh/bgXgbwAD4WvnC8BeunSqafFwIOyL1dCu3QGBgKmPFIBUv4W2kBm+rbrv7F3WHPFBAJDVrjpunA==}
     dependencies:
@@ -65,7 +81,6 @@ packages:
 
   /@iconify/types/1.0.12:
     resolution: {integrity: sha512-6er6wSGF3hgc1JEZqiGpg21CTCjHBYOUwqLmb2Idzkjiw6ogalGP0ZMLVutCzah+0WB4yP+Zd2oVPN8jvJ+Ftg==}
-    dev: false
 
   /@iconify/utils/1.0.21:
     resolution: {integrity: sha512-Rf8vfOH7MI30xyc9rbLFdxnfsfdcrIiIxsoZyEWkUK8P65QsS9PrQXunOc9Wt7uZfJTiX25WMED3WqLKXrRx1Q==}

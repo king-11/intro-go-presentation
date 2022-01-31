@@ -19,9 +19,20 @@ title: Intro to Go
 
 Syntax, Concurreny and Comparison of Golang
 
-<address class="text-white mt-40">
-- Lakshya Singh, Open Source Contributor
-</address>
+---
+layout: image-left
+
+image: /lakshay.jpeg
+---
+
+# Lakshya Singh
+
+- Open Source Contributor
+- Software Developer
+- Polyglot Gopher
+- 3rd Year CSE
+
+Hello to you all <mdi-hand-wave class="animate-bounce"/>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://github.com/king-11" target="_blank" alt="GitHub king-11 Lakshya Singh"
@@ -36,11 +47,15 @@ Syntax, Concurreny and Comparison of Golang
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-linkedin />
   </a>
+  <a href="https://www.manlakshya.tech/" target="_blank" alt="Personal Website/Portfolio Lakshya Singh"
+    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <dashicons-admin-site />
+  </a>
+  <a href="https://www.instagram.com/cryptic_sniper" target="_blank" alt="Instagram Lakshya Singh"
+    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-instagram />
+  </a>
 </div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 
@@ -1452,9 +1467,7 @@ func f() {
 ---
 
 <section class="w-full h-full flex flex-col justify-center">
-  <h1>Thank You <carbon-rocket/> </h1>
+  <h1>Thank You <carbon-location-person-filled class="animate-ping"/> </h1>
 </section>
-
-
 
 ---
