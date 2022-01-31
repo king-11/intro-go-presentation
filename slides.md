@@ -64,11 +64,15 @@ image: /lakshay.jpeg
 - Part6: Concurrency in Go
 - Part7: Error Handling
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Motivation
+
+<copyright/>
 
 ---
 layout: cover
@@ -81,6 +85,9 @@ layout: cover
 - Missing concurrency support.
 - Outdated tools.
 
+<copyright/>
+
+
 ---
 layout: cover
 ---
@@ -91,6 +98,8 @@ layout: cover
 - A build system that scales.
 - Good concurrency support.
 - Tools that can operate at Google-scale.
+
+<copyright/>
 
 ---
 layout: cover
@@ -107,8 +116,10 @@ layout: cover
 - Fast compilers
 - Scalable tools
 
----
+<copyright/>
 
+
+---
 
 # Hello World
 
@@ -122,11 +133,17 @@ func main() {
 }
 ```
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # Syntax
+
+<copyright/>
+
 
 ---
 layout: cover
@@ -146,6 +163,8 @@ Hints on Programming Language Design
 
 **C. A. R. Hoare 1973**
 
+<copyright/>
+
 
 ---
 
@@ -156,6 +175,9 @@ scoped_ptr<logStats::LogStats>
     logStats(logStats::LogStats::NewLogStats(FLAGS_logStats, logStats::LogStats::kFIFO));
 ```
 
+<copyright/>
+
+
 ---
 
 # Too Dense
@@ -164,6 +186,9 @@ scoped_ptr<logStats::LogStats>
 (n: Int) => (2 to n) |> (r => r.foldLeft(r.toSet)((ps, x) =>
     if (ps(x)) ps -- (x * x to n by x) else ps))
 ```
+
+<copyright/>
+
 
 ---
 
@@ -181,11 +206,17 @@ default:
 }
 ```
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # Structure Go code
+
+<copyright/>
+
 
 ---
 
@@ -208,6 +239,9 @@ func main() {
 ```
 
 <p>By convention, all files belonging to a single package are located in a single directory.</p>
+
+<copyright/>
+
 
 ---
 
@@ -233,6 +267,9 @@ var msgs = []string{"Hello, Go", "Ciao, Mondo"}
 
 func itoa(x, base int) string
 ```
+
+<copyright/>
+
 
 ---
 
@@ -261,11 +298,17 @@ Only when used, constants are truncated to size:
 
 Huge win in readability and ease of use.
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # Types
+
+<copyright/>
+
 
 ---
 
@@ -291,6 +334,9 @@ layout: section
 - Maps because everybody needs them: `map[string]int`
 - Interfaces for polymorphism: `interface{}`
 - Channels for communication between goroutines: `chan int`
+
+<copyright/>
+
 
 ---
 
@@ -330,6 +376,9 @@ i := 42 // type of i is int
 return &i
 ```
 
+<copyright/>
+
+
 ---
 
 # Array and Slice
@@ -358,6 +407,9 @@ Slice can be extended/appended to have more elements as well
 fruits = append(fruits, "mango")
 ```
 
+<copyright/>
+
+
 ---
 
 # Maps
@@ -385,6 +437,9 @@ _, ok := set[11]
 ```
 
 </div>
+
+<copyright/>
+
 
 ---
 
@@ -415,6 +470,9 @@ var nameAddress = &namePointer
 
 </v-clicks>
 
+<copyright/>
+
+
 ---
 
 # Structs
@@ -442,6 +500,9 @@ we might want to save it in memory and get a pointer back
 pointerToUser := &User{11, "Lakshya", "Singh", "lakshay.singh1108@gmail.com"}
 user := *pointerToUser
 ```
+
+<copyright/>
+
 
 ---
 
@@ -473,6 +534,9 @@ fmt.Println(inc(0))
 fmt.Println(adder(-1)(10))
 ```
 
+<copyright/>
+
+
 ---
 
 # Variadic Function
@@ -490,6 +554,9 @@ func main() {
     fmt.Println(doThings(1, 11, 101))
 }
 ```
+
+<copyright/>
+
 
 ---
 
@@ -517,9 +584,11 @@ if x < 0 {
 return string(s[i:])
 ```
 
-<!-- <Tweet id="1382055035438129153" scale="0.65" /> -->
+<copyright/>
 
-<!-- We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy. -->
+<!--
+We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+-->
 
 ---
 
@@ -543,6 +612,9 @@ return string(s[i:])
 - type switch
 - go, select
 - defer
+
+<copyright/>
+
 
 ---
 
@@ -570,6 +642,9 @@ a, b = b, a       // swap a and b
 i, err = atoi(s)  // assign results of atoi
 i, _ = atoi(991)  // discard 2nd value
 ```
+
+<copyright/>
+
 
 ---
 
@@ -600,6 +675,9 @@ default:
 }
 ```
 
+<copyright/>
+
+
 ---
 
 # For loops
@@ -625,11 +703,17 @@ for _, x := range primes {
 }
 ```
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # Dependencies
+
+<copyright/>
+
 
 ---
 
@@ -656,6 +740,9 @@ rpc.Call()
 
 A Go import declaration takes the place of a C include.
 
+<copyright/>
+
+
 ---
 
 # Naming: An excursion
@@ -677,6 +764,9 @@ Go has very simple scope hierarchy:
 - function
 - block
 
+<copyright/>
+
+
 ---
 
 # Locality of names
@@ -689,6 +779,9 @@ Go has very simple scope hierarchy:
 <br/>
 - One of the best (and hardest!) decisions made in Go
 <br/>
+
+<copyright/>
+
 
 ---
 
@@ -715,6 +808,9 @@ This has huge consequences for build times!
 <br/>
 <br/>
 Immediate consequences for readability.
+
+<copyright/>
+
 
 ---
 
@@ -744,11 +840,14 @@ At Google scale: dependencies explode, are exponential, become almost non-comput
 <br/>
 A large Google C++ build can read the same header file tens of thousands of times!
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Tools
+<copyright/>
 
 ---
 
@@ -777,6 +876,7 @@ Automatic API adaption: gofix
 <br/>
 <br/>
 All (and more!) integrated into the go command.
+<copyright/>
 
 ---
 
@@ -796,6 +896,9 @@ All depending packages are found by inspecting the import paths of the top-most 
 <br/>
 <br/>
 A single integrated tool takes care of compiling individual files or entire systems.
+
+<copyright/>
+
 
 ---
 
@@ -826,17 +929,25 @@ vet         run go tool vet on packages
 
 [golang.org/cmd/go/](golang.org/cmd/go/)
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # AMA / Drinks Break
 
+<copyright/>
+
+
 ---
 layout: section
 ---
 
 # Object-oriented programming
+
+<copyright/>
 
 
 ---
@@ -848,6 +959,9 @@ layout: quote
 >"Object-oriented programming (OOP) is a programming paradigm using objects – usually instances of a class – consisting of data fields and methods together with their interactions – to design applications and computer programs. Programming techniques may include features such as data abstraction, encapsulation, messaging, modularity, polymorphism, and inheritance. Many modern programming languages now support forms of OOP, at least as an option."
 
 (Wikipedia)
+
+<copyright/>
+
 
 ---
 
@@ -862,6 +976,9 @@ We only need
 <br/>
 
 >Claim: Data abstraction, encapsulation, and modularity are mechanisms in their own right, not OOP specific, and a modern language (OO or not) should have support for them independently.
+
+<copyright/>
+
 
 ---
 
@@ -887,6 +1004,9 @@ Code reuse without inheritance
 - Any type can play the role of a class
 - Methods can be attached to any type
 - Interfaces implement polymorphism.
+
+<copyright/>
+
 
 ---
 
@@ -915,6 +1035,9 @@ func main() {
 }
 ```
 
+<copyright/>
+
+
 ---
 
 # Methods can be attached to any type
@@ -938,6 +1061,9 @@ func main() {
     fmt.Println(t.ToFahrenheit())
 }
 ```
+
+<copyright/>
+
 
 ---
 
@@ -963,6 +1089,9 @@ type Empty interface{}
 - A type that implements all methods of an interface is said to implement the interface.
 - All types implement the empty interface interface{}.
 
+<copyright/>
+
+
 ---
 
 # Dynamic dispatch
@@ -987,6 +1116,9 @@ fmt.Println(v)
 
 >A value (here: corner, boiling) of a type (Point, Celsius) that implements an interface (Stringer) can be assigned to a variable (v) of that interface type.
 
+<copyright/>
+
+
 ---
 
 # Composition and chaining
@@ -1008,6 +1140,8 @@ The `io.Copy` function copies by reading from any Reader and writing to any Writ
 Interfaces are often introduced ad-hoc, and after the fact.
 
 There is no explicit hierarchy and thus no need to design one!
+
+<copyright/>
 
 ---
 
@@ -1038,6 +1172,8 @@ func main() {
 }
 ```
 
+<copyright/>
+
 ---
 
 # Interfaces in practice
@@ -1057,12 +1193,15 @@ No explicit type hierarchies.
 <br/>
 "Plug'n play" in a type-safe way.
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Concurrency
 
+<copyright/>
 
 ---
 layout: cover
@@ -1076,6 +1215,8 @@ layout: cover
 <p>Concurrency is a way to structure software, particularly as a way to write clean code that interacts well with the real world.</p>
 
 <p>It is not parallelism.</p>
+
+<copyright/>
 
 ---
 layout: cover
@@ -1094,6 +1235,8 @@ layout: cover
 
 [golang.org/s/concurrency-is-not-parallelism](golang.org/s/concurrency-is-not-parallelism)
 
+<copyright/>
+
 ---
 
 # A model for software construction
@@ -1110,12 +1253,15 @@ layout: cover
 
 - There is a long history behind Go's concurrency features, going back to Hoare's CSP in 1978 and even Dijkstra's guarded commands (1975).
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Basic Examples
 
+<copyright/>
 
 ---
 
@@ -1140,6 +1286,8 @@ func f(msg string, delay time.Duration) {
 }
 ```
 
+<copyright/>
+
 ---
 
 # Ignoring it
@@ -1158,6 +1306,7 @@ func main() {
 }
 ```
 
+<copyright/>
 
 ---
 
@@ -1177,11 +1326,15 @@ func main() {
 }
 ```
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Goroutines
+
+<copyright/>
 
 ---
 layout: cover
@@ -1203,6 +1356,8 @@ layout: cover
 <p>Instead, goroutines are multiplexed dynamically onto threads as needed to keep all the goroutines running.</p>
 
 <p>But if you think of it as a very cheap thread, you won't be far off.</p>
+
+<copyright/>
 
 ---
 
@@ -1229,6 +1384,8 @@ Receiving from a channel.
 // The "arrow" indicates the direction of data flow.
 value = <-c
 ```
+
+<copyright/>
 
 ---
 
@@ -1259,6 +1416,8 @@ func f(msg string, delay time.Duration, c chan string) {
 }
 ```
 
+<copyright/>
+
 ---
 
 # Synchronization
@@ -1277,6 +1436,8 @@ Channels[^1] can be unbuffered or buffered.
 buffered := make(chan int, 5)
 unbuffered := make(chan int)
 ```
+
+<copyright/>
 
 [^1]: [Buffered Channels](https://go.dev/tour/concurrency/3)
 
@@ -1301,6 +1462,8 @@ func main() {
 
 <p>This enables a rich variety of concurrency patterns.</p>
 
+<copyright/>
+
 ---
 
 # Chain of gophers
@@ -1308,6 +1471,8 @@ func main() {
 ![chain of gophers](/chain.png)
 
 Ok, I'm just bragging here
+
+<copyright/>
 
 ---
 
@@ -1337,6 +1502,7 @@ func main() {
 }
 ```
 
+<copyright/>
 
 ---
 
@@ -1362,6 +1528,8 @@ func consumer(in chan []int, n int) {
 <p>The producer produces and endless supply of work orders and sends them out.</p>
 
 <p>The consumer receives n results from the in channel and then terminates.</p>
+
+<copyright/>
 
 ---
 
@@ -1390,17 +1558,23 @@ func main() {
 
 <p>On a multi-core system, many workers may truly run in parallel.</p>
 
+<copyright/>
+
 ---
 
 # The Go approach
 
 >Don't communicate by sharing memory, share memory by communicating.
 
+<copyright/>
+
 ---
 layout: section
 ---
 
 # Error Handling
+
+<copyright/>
 
 ---
 
@@ -1432,6 +1606,8 @@ func main() {
 }
 ```
 
+<copyright/>
+
 ---
 
 ## Recovering
@@ -1455,6 +1631,8 @@ func f() {
 }
 ```
 
+<copyright/>
+
 [^1]: [Defer-Panic-Recover](https://go.dev/blog/defer-panic-and-recover)
 
 ---
@@ -1475,6 +1653,7 @@ layout: cover
 
 - Concurrency is awesome, and you should check it out.
 
+<copyright/>
 
 ---
 layout: cover
@@ -1496,6 +1675,8 @@ layout: cover
 
 - Build something using awesome tools [https://github.com/avelino/awesome-go](https://github.com/avelino/awesome-go)
 
+<copyright/>
+
 ---
 layout: cover
 ---
@@ -1514,6 +1695,8 @@ layout: cover
 
 - Modules
 
+<copyright/>
+
 ---
 layout: cover
 ---
@@ -1521,3 +1704,5 @@ layout: cover
 <section class="w-full h-full flex flex-col justify-center">
   <h1>Thank You <carbon-location-person-filled class="animate-ping"/> </h1>
 </section>
+
+<copyright/>
