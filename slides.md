@@ -48,9 +48,12 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # Organization of this workshop
 
 - Part1: Introduction to Go
-- Part2: AMA
-- Part3: Obect-oriented Programming
-- Part4: Concurrency in Go
+- Part2: Basic Syntax
+- Part3: Tools and Dependencies
+- Part4: AMA
+- Part5: Obect-oriented Programming
+- Part6: Concurrency in Go
+- Part7: Error Handling
 
 ---
 
