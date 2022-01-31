@@ -8,12 +8,11 @@ background: https://source.unsplash.com/collection/94734566/1920x1080
 class: 'text-left'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
-# show line numbers in code blocks
-# lineNumbers: false
-# some information about the slides, markdown enabled
+download: true
 info: |
   ## Introduction to Golang
   Syntax, Concurreny and Comparison of Golang
+title: Intro to Go
 ---
 
 # Intro to Go
@@ -118,15 +117,16 @@ Syntax
 
 Ideas on building Language
 
-_Syntax is not important... - unless you are a programmer._
-<br>
+>Syntax is not important... - unless you are a programmer.
+
 **Rob Pike.**
 
-_The readability of programs is immeasurably more important than their writeability._
-<br>
+>The readability of programs is immeasurably more important than their writeability.
+
 Hints on Programming Language Design
-<br>
+
 **C. A. R. Hoare 1973**
+
 
 ---
 

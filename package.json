@@ -10,5 +10,8 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "intro-go"
+  "name": "intro-go",
+  "devDependencies": {
+    "playwright-chromium": "^1.18.1"
+  }
 }
